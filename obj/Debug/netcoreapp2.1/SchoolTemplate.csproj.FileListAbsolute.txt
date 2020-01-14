@@ -32,3 +32,37 @@ H:\Visual studio met Kyra\SchoolTemplate\5V-eindproject\obj\Debug\netcoreapp2.1\
 H:\Visual studio met Kyra\SchoolTemplate\5V-eindproject\obj\Debug\netcoreapp2.1\SchoolTemplate.dll
 H:\Visual studio met Kyra\SchoolTemplate\5V-eindproject\obj\Debug\netcoreapp2.1\SchoolTemplate.pdb
 H:\Visual studio met Kyra\SchoolTemplate\5V-eindproject\obj\Debug\netcoreapp2.1\SchoolTemplate.csproj.CopyComplete
+H:\festival naam\bin\Debug\netcoreapp2.1\appsettings.Development.json
+H:\festival naam\bin\Debug\netcoreapp2.1\appsettings.example.Development.json
+H:\festival naam\bin\Debug\netcoreapp2.1\appsettings.example.json
+H:\festival naam\bin\Debug\netcoreapp2.1\appsettings.json
+H:\festival naam\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+H:\festival naam\bin\Debug\netcoreapp2.1\SchoolTemplate.deps.json
+H:\festival naam\bin\Debug\netcoreapp2.1\SchoolTemplate.runtimeconfig.json
+H:\festival naam\bin\Debug\netcoreapp2.1\SchoolTemplate.runtimeconfig.dev.json
+H:\festival naam\bin\Debug\netcoreapp2.1\SchoolTemplate.dll
+H:\festival naam\bin\Debug\netcoreapp2.1\SchoolTemplate.pdb
+H:\festival naam\bin\Debug\netcoreapp2.1\SchoolTemplate.Views.dll
+H:\festival naam\bin\Debug\netcoreapp2.1\SchoolTemplate.Views.pdb
+H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.RazorAssemblyInfo.cache
+H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.RazorAssemblyInfo.cs
+H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.AssemblyInfoInputs.cache
+H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.AssemblyInfo.cs
+H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.TagHelpers.input.cache
+H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.TagHelpers.output.cache
+H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.RazorCoreGenerate.cache
+H:\festival naam\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
+H:\festival naam\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.cshtml.g.cs
+H:\festival naam\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowAll.cshtml.g.cs
+H:\festival naam\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.cshtml.g.cs
+H:\festival naam\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
+H:\festival naam\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+H:\festival naam\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+H:\festival naam\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.cshtml.g.cs
+H:\festival naam\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.cshtml.g.cs
+H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.RazorTargetAssemblyInfo.cache
+H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.RazorTargetAssemblyInfo.cs
+H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.Views.pdb
+H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.dll
+H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.pdb
+H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.csproj.CopyComplete
