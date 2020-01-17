@@ -66,3 +66,5 @@ H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.Views.pdb
 H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.dll
 H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.pdb
 H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.csproj.CopyComplete
+H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.csprojAssemblyReference.cache
+H:\festival naam\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index - Copy.cshtml.g.cs
