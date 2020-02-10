@@ -1,4 +1,4 @@
-﻿header{
+﻿.header{
     background-color:aquamarine;
     text-align:left;
     padding: 20px;
@@ -8,12 +8,16 @@
 
 
 body {
-    background-color: antiquewhite;
+    background-color: aqua;
     margin-left: 150px;
     margin-left: 150px;
 }
 
 h1{ 
     text-align: center;
-
+    background-color: white;
+    margin-top: 250px;
+    font-size: 200px;
+    margin-left: unset;
+    margin-right:unset;
 }
