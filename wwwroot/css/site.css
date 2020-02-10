@@ -4,13 +4,14 @@
     padding: 20px;
 }
 
-
-
-
 body {
     background-color: aqua;
     margin-left: 150px;
     margin-left: 150px;
+}
+
+ul li {
+    display: inline-block;
 }
 
 h1{ 
