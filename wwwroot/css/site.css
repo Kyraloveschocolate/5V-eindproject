@@ -1,8 +1,25 @@
-﻿.header{
-    background-color:aquamarine;
-    text-align:left;
-    padding: 20px;
+﻿header {
+    Background: #55d6aa;
+    Header:: after
+    
 }
+
+.container {
+    Width: 80%;
+    Margin: 0 auto;
+}
+
+.logo {
+    Float: left;
+    Padding: 5px 0;
+    
+
+}
+
+Nav {
+    Float: right;
+}
+
 
 body {
     background-color: #F2916D;
@@ -11,9 +28,24 @@ body {
 
 }
 
-ul li {
-    display: inline-block;
+Nav ul {
+    Margin: 0;
+    Padding: 0;
+    List-style: none;
 }
+
+Nav li {
+    Display: inline-block;
+    Margin-left: 70px;
+}
+
+Nav a {
+    Color: #444;
+    Text-decoration: none;
+    Text-transform: uppercase;
+    Font-size: 14px;
+}
+
 
 h1{ 
     text-align: center;
