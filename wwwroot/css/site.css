@@ -8,9 +8,10 @@
 
 
 body {
-    background-color: aqua;
+    background-color: #F2916D;
     margin-left: 150px;
-    margin-left: 150px;
+    margin-right: 150px;
+
 }
 
 h1{ 
@@ -20,4 +21,4 @@ h1{
     font-size: 200px;
     margin-left: unset;
     margin-right:unset;
-}
+}                                                   
