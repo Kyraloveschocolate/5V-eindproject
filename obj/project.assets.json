@@ -12575,19 +12575,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\110289\\.nuget\\packages\\": {}
+    "C:\\Users\\110237\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\festival naam\\SchoolTemplate.csproj",
+      "projectUniqueName": "H:\\festival website\\5V-eindproject\\SchoolTemplate.csproj",
       "projectName": "SchoolTemplate",
-      "projectPath": "H:\\festival naam\\SchoolTemplate.csproj",
-      "packagesPath": "C:\\Users\\110289\\.nuget\\packages\\",
-      "outputPath": "H:\\festival naam\\obj\\",
+      "projectPath": "H:\\festival website\\5V-eindproject\\SchoolTemplate.csproj",
+      "packagesPath": "C:\\Users\\110237\\.nuget\\packages\\",
+      "outputPath": "H:\\festival website\\5V-eindproject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\110289\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\110237\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
