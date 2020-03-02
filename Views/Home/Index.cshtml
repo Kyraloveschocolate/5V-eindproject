@@ -1,37 +1,18 @@
-﻿@using SchoolTemplate.Database;
-@model List<Product>
+﻿@model List<SchoolTemplate.Database.Festival>
 @{
-  ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Festival";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <div class="text-center">
-        <h1>
-       <img src=" https://www.youredm.com/wp-content/uploads/2015/02/sunset-coachella-youredm.jpg"
-         <class="display-4">Welcome to Breepark</h1>
-        <img src="<meta charset=" utf-8"><b style="font-weight:normal;" id="docs-internal-guid-223b4fd5-7fff-ff50-de3f-3799b46b3a05"><span style="border:none;filter: brightness(0.99);display:inline-block;overflow:hidden;width:284px;height:230px;"><img src="https://lh4.googleusercontent.com/fCw3kwEtEMYyvlf7UCrVxWWVeFcNyCMirbhwqYIcDi3m7P8Xn-csFtFsiWyNBqTbFgx88N8m-1fXXXM0Csz1KB22VutIOqtfbUDDQQkCmEFcIC09J2i-0sn-nZQi2AVMoaGY4eoi" width="1656.795673804889" height="887.1428571428571" style="margin-left:-901.3093950537168px;margin-top:-365.5357142857143px;" /></span></b>"
+<h1>@ViewData["id"]</h1>
+<p>Alle festival gegevens</p>
 
-          <p>· Star festival tickets on sale · Star festival tickets on sale · Star festival tikets on sale · Star festival tikets on sale· Star festival tikets on sale· Star festival tikets on sale</p>
-    </div>
-</head>
+@using SchoolTemplate.Database;
 
-<body>
-<header>
-     <div class="container">
+@{
+    ViewData["Title"] = "Home Page";
+}
 
-         <nav>
-             <ul>
-                 
-
-
-             </ul>
-
-
-         </nav>
-
-
-     </div>
-</header>
-</body>
-</html>
+@foreach (Festival f in Model)
+{
+    <h1>@f.Naam</h1>
+    <p>@f.Beschrijving</p>
+}

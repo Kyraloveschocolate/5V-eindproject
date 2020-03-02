@@ -15,44 +15,83 @@ namespace SchoolTemplate.Controllers
 
     public IActionResult Index()
     {
-      List<Product> products = new List<Product>();
+      List<Festival> Festival = new List<Festival>();
       // uncomment deze regel om producten uit je database toe te voegen
-      //  products = GetProducts();
+        Festival = GetFestivals();
 
-      return View(products);
+      return View(Festival);
     }
 
-    private List<Product> GetProducts()
-    {
-      List<Product> products = new List<Product>();
 
-      using (MySqlConnection conn = new MySqlConnection(connectionString))
-      {
-        conn.Open();
-        MySqlCommand cmd = new MySqlCommand("select * from product", conn);
-
-        using (var reader = cmd.ExecuteReader())
+    private List<Festival> GetFestivals()
         {
-          while (reader.Read())
-          {
-            Product p = new Product
+            List<Festival> festivals = new List<Festival>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                Id = Convert.ToInt32(reader["Id"]),
-              Naam = reader["Naam"].ToString(),
-              Calorieen = float.Parse(reader["calorieen"].ToString()),
-              Formaat = reader["Formaat"].ToString(),
-              Gewicht = Convert.ToInt32(reader["Gewicht"].ToString()),
-              Prijs = Decimal.Parse(reader["Prijs"].ToString())
-            };
-            products.Add(p);
-          }
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("select * from Festival", conn);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Festival F = new Festival
+                        {
+                            Id = Convert.ToInt32(reader["Id"]),
+                            Naam = reader["Naam"].ToString(),
+                            Beschrijving = reader["Beschrijving"].ToString(),
+                            Datum = DateTime.Parse(reader["Datum"].ToString()),
+                            Prijs = Decimal.Parse(reader["Prijs"].ToString())
+                        };
+                        festivals.Add(F);
+                    }
+                }
+            }
+
+            return festivals;
+
         }
-      }
 
-      return products;
-    }
 
-    public IActionResult Privacy()
+        [Route("festival/{id}")]
+     public IActionResult Festival (string id)
+        {
+            var model = GetFestival(id);
+            return View(model);
+        }
+
+        private Festival GetFestival (string id)
+        { 
+            
+            List<Festival> festivals= new List<Festival>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("select * from Festival", conn);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Festival F = new Festival
+                        {
+                            Id = Convert.ToInt32(reader["Id"]),
+                            Naam = reader["Naam"].ToString(),
+                            Beschrijving = reader["Beschrijving"].ToString(),
+                            Datum = DateTime.Parse(reader["Datum"].ToString()),
+                            Prijs = Decimal.Parse(reader["Prijs"].ToString())
+                        };
+                        festivals.Add(F);
+                    }
+                }
+            }
+
+            return festivals[0]; 
+        }
+
+        public IActionResult Privacy()
     {
       return View();
     }

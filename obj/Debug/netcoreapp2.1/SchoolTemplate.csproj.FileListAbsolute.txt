@@ -51,7 +51,6 @@ H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.AssemblyInfo.cs
 H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.TagHelpers.input.cache
 H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.TagHelpers.output.cache
 H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.RazorCoreGenerate.cache
-H:\festival naam\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
 H:\festival naam\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.cshtml.g.cs
 H:\festival naam\obj\Debug\netcoreapp2.1\Razor\Views\Home\ShowAll.cshtml.g.cs
 H:\festival naam\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.cshtml.g.cs
@@ -67,7 +66,6 @@ H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.dll
 H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.pdb
 H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.csproj.CopyComplete
 H:\festival naam\obj\Debug\netcoreapp2.1\SchoolTemplate.csprojAssemblyReference.cache
-H:\festival naam\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index - Copy.cshtml.g.cs
 H:\festival website\5V-eindproject\bin\Debug\netcoreapp2.1\appsettings.Development.json
 H:\festival website\5V-eindproject\bin\Debug\netcoreapp2.1\appsettings.example.Development.json
 H:\festival website\5V-eindproject\bin\Debug\netcoreapp2.1\appsettings.example.json
@@ -104,3 +102,5 @@ H:\festival website\5V-eindproject\obj\Debug\netcoreapp2.1\SchoolTemplate.Views.
 H:\festival website\5V-eindproject\obj\Debug\netcoreapp2.1\SchoolTemplate.dll
 H:\festival website\5V-eindproject\obj\Debug\netcoreapp2.1\SchoolTemplate.pdb
 H:\festival website\5V-eindproject\obj\Debug\netcoreapp2.1\SchoolTemplate.csproj.CopyComplete
+H:\festival naam\obj\Debug\netcoreapp2.1\Razor\Views\Home\Festival.cshtml.g.cs
+H:\festival naam\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
