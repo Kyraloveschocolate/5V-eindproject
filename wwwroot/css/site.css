@@ -1,20 +1,44 @@
-﻿.header{
-    background-color:aquamarine;
-    text-align:left;
-    padding: 20px;
-}
-
-
-
-
-body {
+﻿body {
     background-color: #F2916D;
     margin-left: 150px;
     margin-right: 150px;
+}
+
+header {
+    background-color: #55d6aa;    
+    
+}
+.container {
+    Width: 80%;
+    Margin: 0 auto;
+}
+
+.logo {
+    Float: left;
+    Padding: 5px 0;
+    
 
 }
 
-h1 {
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    Display: inline-block;
+    Margin-left: 70px;
+}
+
+nav a {
+    Color: #444;
+    Text-decoration: none;
+    Text-transform: uppercase;
+    Font-size: 14px;
+}
+
+h1{ 
     text-align: center;
     background-color: white;
     margin-top: 250px;
