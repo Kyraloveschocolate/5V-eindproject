@@ -5,17 +5,17 @@
 }
 
 header {
-    background-color: #55d6aa;    
+    background-color: white;    
     
 }
 .container {
-    Width: 80%;
-    Margin: 0 auto;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .logo {
-    Float: left;
-    Padding: 5px 0;
+    float: left;
+    padding: 5px 0;
     
 
 }
@@ -27,15 +27,15 @@ nav ul {
 }
 
 nav li {
-    Display: inline-block;
-    Margin-left: 70px;
+    display: inline-block;
+    margin-left: 70px;
 }
 
 nav a {
-    Color: #444;
-    Text-decoration: none;
-    Text-transform: uppercase;
-    Font-size: 14px;
+    color: #444;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
 }
 
 h1{ 
