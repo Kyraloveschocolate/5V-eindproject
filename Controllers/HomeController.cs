@@ -55,7 +55,7 @@ namespace SchoolTemplate.Controllers
 
 
         [Route("festival/{id}")]
-     public IActionResult Festival (string id)
+        public IActionResult Festival (string id)
         {
             var model = GetFestival(id);
             return View(model);
@@ -69,7 +69,7 @@ namespace SchoolTemplate.Controllers
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from Festival", conn);
+                MySqlCommand cmd = new MySqlCommand($"select * from Festival where id = {id}", conn);
 
                 using (var reader = cmd.ExecuteReader())
                 {
@@ -92,11 +92,27 @@ namespace SchoolTemplate.Controllers
         }
 
         public IActionResult Privacy()
-    {
-      return View();
-    }
+        {
+            return View();
+        }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        [Route("agenda")]
+        public IActionResult Agenda()
+        {
+            return View();
+        }
+        [Route("tickets")]
+        public IActionResult Tickets()
+        {
+            return View();
+        }
+        [Route("contact")]
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
       return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
