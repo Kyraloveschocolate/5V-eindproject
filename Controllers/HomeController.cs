@@ -54,6 +54,46 @@ namespace SchoolTemplate.Controllers
         }
 
 
+        public IActionResult Index()
+        {
+            List<Festival_dag> Festivaldag = new List<Festival_dag>();
+            // uncomment deze regel om producten uit je database toe te voegen
+            Festival_dag = GetFestivaldagen();
+
+            return View(Festival_dag);
+        }
+
+
+        private List<Festival_dag> GetFestivaldagen()
+        {
+            List<Festival_dag> festivaldagen = new List<Festival_dag>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("select * from Festivaldagen", conn);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Festivaldag F = new Festivaldag
+                        {
+                            Id = Convert.ToInt32(reader["Id"]),
+                            Naam = reader["Naam"].ToString(),
+                            Beschrijving = reader["Beschrijving"].ToString(),
+                            Datum = DateTime.Parse(reader["Datum"].ToString()),
+                            Prijs = Decimal.Parse(reader["Prijs"].ToString())
+                        };
+                        festivaldagen.Add(FD);
+                    }
+                }
+            }
+
+            return festivaldagen;
+
+        }
+
         [Route("festival/{id}")]
         public IActionResult Festival (string id)
         {
