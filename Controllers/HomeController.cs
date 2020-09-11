@@ -106,18 +106,16 @@ namespace SchoolTemplate.Controllers
             return View();
         }
         [Route("contact")]
-        public IActionResult Contact()
+     
+        public IActionResult Contact (string voornaam, string achternaam)
         {
+            ViewData["voornaam"] = voornaam;
+            ViewData["achternaam"] = achternaam;
             return View();
         }
 
         [Route("contact")]
         [HttpPost]
-
-        public IActionResult Contact (string voornaam, string achternaam)
-        {
-
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
