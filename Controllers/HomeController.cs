@@ -59,6 +59,19 @@ namespace SchoolTemplate.Controllers
             var model = GetFestival(id);
             return View(model);
         }
+        private void SavePerson(PersonModel person)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(naam, achternaam, emailadres) VALUES(?voornaam, ?achternaam, ?email)", conn);
+
+                cmd.Parameters.Add("?voornaam", MySqlDbType.VarChar).Value = person.Voornaam;
+                cmd.Parameters.Add("?achternaam", MySqlDbType.VarChar).Value = person.Achternaam;
+                cmd.Parameters.Add("?email", MySqlDbType.VarChar).Value = person.Email;
+                cmd.ExecuteNonQuery();
+            }
+        }
 
         private Festival GetFestival(string id)
         {
@@ -118,7 +131,16 @@ namespace SchoolTemplate.Controllers
         [HttpPost]
         public IActionResult Contact(PersonModel model)
         {
+           // geen valide model? Dan tonen we de foutmeldingen
+           if(!ModelState.IsValid)
             return View(model);
+
+            // Model is valide. Dus we kunnen opslaan
+            SavePerson(model);
+
+            ViewData["formsucces"] = "ök";
+
+            return View();
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
