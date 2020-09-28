@@ -53,6 +53,36 @@ namespace SchoolTemplate.Controllers
 
         }
 
+        private List<Festival> GetFestival()
+        {
+            List<Festival> festivals = new List<Festival>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand($"select * from product", conn);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Festival p = new Festival
+                        {
+                            Id = Convert.ToInt32(reader["Id"]),
+                            Naam = reader["Naam"].ToString(),
+                            Beschrijving = reader["Beschrijving"].ToString(),
+                            Datum = DateTime.Parse(reader["Datum"].ToString()),
+                            Prijs = Decimal.Parse(reader["Prijs"].ToString())
+                        };
+                        festivals.Add(p);
+                    }
+                }
+            }
+
+            return festivals;
+
+        }
+
         [Route("festival/{id}")]
         public IActionResult Festival(string id)
         {
@@ -147,5 +177,12 @@ namespace SchoolTemplate.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [Route("show-all")]
+        public IActionResult ShowAll()
+        {
+            return View();
+        }
+
     }
 }
