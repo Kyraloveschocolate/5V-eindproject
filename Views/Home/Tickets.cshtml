@@ -1,7 +1,17 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
+﻿@using SchoolTemplate.Database;
+@model List<SchoolTemplate.Database.FestivalDag>
+@{
+    ViewData["Title"] = "Tickets";
 }
 
 <h1>@ViewData["Title"]</h1>
 
-<p>WE DON'T DO PRIVACY! PRIVACY IS FOR PIRATES.</p>
+<p>Hieronder de tijden en ticketvoorraden van je favoriete festivals.</p>
+
+@foreach (FestivalDag f in Model)
+{
+    <p>@f.festival_naam </p>
+    <p>@f.start</p>
+    <p>@f.end</p>
+    <p>@f.voorraad</p>
+}

@@ -2,20 +2,23 @@
 
 namespace SchoolTemplate.Database
 {
-  public class Festival
+  public class FestivalDag
   {
     public int Id { get; set; }
     
-    public string Naam { get; set; }
+    public int festivalId { get; set; }
 
-    public string Beschrijving { get; set; }    
+    public DateTime start { get; set; }
+
+        public String festival_naam { get; set; }
+
+        public DateTime end { get; set; }    
 
     /// <summary>
     /// Gebruik altijd decimal voor geldzaken. Dit doe je om te voorkomen dat er afrondingsfouten optreden
     /// </summary>
-    public Decimal Prijs { get; set; }
 
-    public DateTime Datum { get; set; }
+    public string voorraad { get; set; }
 
   }
 }

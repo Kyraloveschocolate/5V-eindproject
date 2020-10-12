@@ -11,7 +11,7 @@ namespace SchoolTemplate.Controllers
     public class HomeController : Controller
     {
         // zorg ervoor dat je hier je gebruikersnaam (leerlingnummer) en wachtwoord invult
-        string connectionString = "Server=172.16.160.21;Port=st-maartenscollege.nl;Database=110289;Uid=110289;Pwd=orUceAKi;";
+        string connectionString = "Server=172.16.160.21;Port=3306;Database=110289;Uid=110289;Pwd=orUceAKi;";
 
         public IActionResult Index()
         {
@@ -60,7 +60,7 @@ namespace SchoolTemplate.Controllers
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand($"select * from product", conn);
+                MySqlCommand cmd = new MySqlCommand($"select * from Festival", conn);
 
                 using (var reader = cmd.ExecuteReader())
                 {
@@ -83,12 +83,40 @@ namespace SchoolTemplate.Controllers
 
         }
 
-        [Route("festival/{id}")]
-        public IActionResult Festival(string id)
+        private List<FestivalDag> GetFestivalDags()
         {
-            var model = GetFestival(id);
-            return View(model);
+            List<FestivalDag> festivaldags = new List<FestivalDag>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand($"select * from festival_dag", conn);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        FestivalDag D = new FestivalDag
+                        {
+                            Id = Convert.ToInt32(reader["id"]),
+                            festivalId = Convert.ToInt32(reader["festival_id"]),
+                            festival_naam = (reader["festival_naam"].ToString()),
+                            start = DateTime.Parse(reader["start"].ToString()),
+                            end = DateTime.Parse(reader["end"].ToString()),
+                            voorraad = reader["voorraad"].ToString(),
+
+                        };
+                    festivaldags.Add(D);
+                    }
+                }
+            }
+
+            return festivaldags;
+
         }
+    
+      
+
         private void SavePerson(PersonModel person)
         {
             using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -146,8 +174,19 @@ namespace SchoolTemplate.Controllers
         [Route("tickets")]
         public IActionResult Tickets()
         {
-            return View();
+            var festivalDagen = GetFestivalDags();
+            return View(festivalDagen);
         }
+
+        [Route("festival/{id}")]
+        public IActionResult Festival(string id)
+        {
+            var model = GetFestival(id);
+            return View(model);
+        }
+       
+
+
         [Route("contact")]
      
         public IActionResult Contact (string voornaam, string achternaam)
