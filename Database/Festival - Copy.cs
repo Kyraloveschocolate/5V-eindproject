@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace SchoolTemplate.Database
 {
   public class Festival
