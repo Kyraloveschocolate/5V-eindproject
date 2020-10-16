@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
 using SchoolTemplate.Database;
@@ -54,10 +55,45 @@ namespace SchoolTemplate.Controllers
 
         }
 
+        private List<FestivalDag> GetFestivalDags()
+        {
+            List<FestivalDag> festivaldags = new List<FestivalDag>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand($"select * from festival_dag", conn);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        FestivalDag D = new FestivalDag
+                        {
+                            Id = Convert.ToInt32(reader["id"]),
+                            festivalId = Convert.ToInt32(reader["festival_id"]),
+                            festival_naam = (reader["festival_naam"].ToString()),
+                            start = DateTime.Parse(reader["start"].ToString()),
+                            end = DateTime.Parse(reader["end"].ToString()),
+                            voorraad = reader["voorraad"].ToString(),
+
+                        };
+                        festivaldags.Add(D);
+                    }
+                }
+            }
+
+            return festivaldags;
+
+        }
+
+
         [Route("festival/{id}")]
         public IActionResult Festival(string id)
         {
             var model = GetFestival(id);
+            var prijzen = GetFestivalDags().Where(f => f.festivalId.ToString() == id);
+            ViewData["prijzen"] = prijzen.ToList();
             return View(model);
         }
         private void SavePerson(PersonModel person)
@@ -117,10 +153,7 @@ namespace SchoolTemplate.Controllers
         [Route("tickets")]
         public IActionResult Tickets()
         {
-            List<Festival> Festival = new List<Festival>();
-            // uncomment deze regel om producten uit je database toe te voegen
-            Festival = GetFestivals();
-            return View();
+          return View(GetFestivalDags());
         }
         [Route("contact")]
      
