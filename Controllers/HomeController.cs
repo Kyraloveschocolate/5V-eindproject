@@ -53,14 +53,14 @@ namespace SchoolTemplate.Controllers
 
         }
 
-        private List<Festival> GetFestival()
+        private Festival GetFestival(string id)
         {
             List<Festival> festivals = new List<Festival>();
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand($"select * from Festival", conn);
+                MySqlCommand cmd = new MySqlCommand($"select * from festival where id = {id}", conn);
 
                 using (var reader = cmd.ExecuteReader())
                 {
@@ -79,7 +79,7 @@ namespace SchoolTemplate.Controllers
                 }
             }
 
-            return festivals;
+            return festivals[0];
 
         }
 
@@ -131,7 +131,7 @@ namespace SchoolTemplate.Controllers
             }
         }
 
-        private Festival GetFestival(string id)
+        private Festival GetFestivalDag(string id)
         {
 
             List<Festival> festivals = new List<Festival>();
