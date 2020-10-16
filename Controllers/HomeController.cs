@@ -11,7 +11,8 @@ namespace SchoolTemplate.Controllers
     public class HomeController : Controller
     {
         // zorg ervoor dat je hier je gebruikersnaam (leerlingnummer) en wachtwoord invult
-        string connectionString = "Server=172.16.160.21;Port=st-maartenscollege.nl;Database=110289;Uid=110289;Pwd=orUceAKi;";
+        string connectionString = "Server=172.16.160.21;Port=3306;Database=110289;Uid=110289;Pwd=orUceAKi;";
+        // string connectionString = "Server=st-maartenscollege.nl;Port=3306;Database=110289;Uid=110289;Pwd=orUceAKi;";
 
         public IActionResult Index()
         {
@@ -45,36 +46,6 @@ namespace SchoolTemplate.Controllers
                             Prijs = Decimal.Parse(reader["Prijs"].ToString())
                         };
                         festivals.Add(F);
-                    }
-                }
-            }
-
-            return festivals;
-
-        }
-
-        private List<Festival> GetFestival()
-        {
-            List<Festival> festivals = new List<Festival>();
-
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand($"select * from product", conn);
-
-                using (var reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        Festival p = new Festival
-                        {
-                            Id = Convert.ToInt32(reader["Id"]),
-                            Naam = reader["Naam"].ToString(),
-                            Beschrijving = reader["Beschrijving"].ToString(),
-                            Datum = DateTime.Parse(reader["Datum"].ToString()),
-                            Prijs = Decimal.Parse(reader["Prijs"].ToString())
-                        };
-                        festivals.Add(p);
                     }
                 }
             }
@@ -146,6 +117,9 @@ namespace SchoolTemplate.Controllers
         [Route("tickets")]
         public IActionResult Tickets()
         {
+            List<Festival> Festival = new List<Festival>();
+            // uncomment deze regel om producten uit je database toe te voegen
+            Festival = GetFestivals();
             return View();
         }
         [Route("contact")]
