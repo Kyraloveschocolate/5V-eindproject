@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
 using SchoolTemplate.Database;
@@ -181,6 +182,9 @@ namespace SchoolTemplate.Controllers
         [Route("festival/{id}")]
         public IActionResult Festival(string id)
         {
+            var alleFestivalDagen = GetFestivalDags();
+            var festivaldagenVanDitFestival = alleFestivalDagen.Where(f => f.festivalId.ToString() == id);
+            ViewData["prijzen"] = festivaldagenVanDitFestival.ToList();
             var model = GetFestival(id);
             return View(model);
         }
