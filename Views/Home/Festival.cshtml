@@ -18,6 +18,7 @@
 @foreach(FestivalDag fd in prijzen)
     {
     <p>Start: @fd.start.ToString("dd MMM - HH:mm")</p> 
-    <p>@fd.voorraad</p>
+    <p>Einde: @fd.end.ToString("dd MMM - HH:mm")</p>
+    <p>Voorraad: @fd.voorraad</p>
     }
 }

@@ -9,11 +9,26 @@
 
 <p>Hieronder de tijden en ticketvoorraden van je favoriete festivals.</p>
 
-@foreach (FestivalDag f in Model)
-{
 
-    <p>@f.festival_naam </p>
-    <p>@f.start</p>
-    <p>@f.end</p>
-    <p>@f.voorraad</p>
-}
+<center>
+    <table>
+        <tr>
+            <th>Naam:</th>
+            <th>Start:</th>
+            <th>Einde:</th>
+            <th>Voorraad:</th>
+        </tr>
+        @foreach (FestivalDag f in Model)
+        {
+            <tr>
+                <th>@f.festival_naam</th>
+                <th>@f.start</th>
+                <th>@f.end</th>
+                <th>@f.voorraad</th>
+            </tr>
+        }
+        </table>
+</center>
+    <center>
+        <button onclick="location.href='https://www.paypal.com/nl/signin';" class="button">Bestellen</button>
+    </center>
