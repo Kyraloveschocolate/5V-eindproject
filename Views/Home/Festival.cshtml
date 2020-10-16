@@ -1,6 +1,7 @@
 ﻿@model SchoolTemplate.Database.Festival
 @{ 
     ViewData["Title"] = "Festival";
+    List<FestivalDag> prijzen = ViewData["prijzen"] as List<FestivalDag>;
 }
 <h1>@ViewData["id"]</h1>
 
@@ -13,3 +14,10 @@
 
 <h1>@Model.Naam</h1>
 <p>@Model.Beschrijving</p>
+@if(prijzen != null) { 
+@foreach(FestivalDag fd in prijzen)
+    {
+    <p>Start: @fd.start.ToString("dd MMM - HH:mm")</p> 
+    <p>@fd.voorraad</p>
+    }
+}
